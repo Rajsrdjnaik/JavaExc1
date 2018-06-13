@@ -5,8 +5,8 @@ public class Exc5 {
 		int sum = 0;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("How many numbers");
-		int intNumberOfIntegers = sc.nextInt();
-		int intStorage[] = new int[intNumberOfIntegers];
+		int NumberOfIntegers = sc.nextInt();
+		int intStorage[] = new int[NumberOfIntegers];
 		System.out.println("Enter the numbers");
 		
 		for(int i = 0;i < intStorage.length;i++) {

@@ -1,19 +1,14 @@
-import java.util.Scanner;
-
+package main;
 public class Exc7 {
 
-	public static void main(String[] args) {
+	public static int[] sort(int x)  {
 	
-	Scanner sc = new Scanner(System.in);	
-	
-	System.out.println("Enter number...");
-	int num = sc.nextInt();
-	int r,len=0, sum = 0;
-	int arr[] = new int[10];
-	int n = num, temp;	
-	while( num != 0 )
+    int r,len=0, sum = 0;
+	int arr[] = new int[6];
+	int n = x, temp;	
+	while( x != 0 )
 	{
-		num = num/10;
+		x = x/10;
 		len++;		
 	}
 	
@@ -24,18 +19,20 @@ public class Exc7 {
 		arr[i] = r;
 		
 	}
-	
+//	System.out.println(Arrays.toString(a));
 	for ( int i = len; i > 0; i-- )
 	{
-		for( int j = 0; j < i; j++ )
-		{
+		for( int j = 0; j < len-1; j++ )
+		{	
+			
 			if( arr[j] < arr[j+1] )
 			{
 				temp = arr[j];
 				arr[j] = arr[j+1];
 				arr[j+1] = temp;
 			}
-		}
+			}
+		
 	}
 	System.out.print("After sorting - ");
 	for( int i = 0; i < len; i++)
@@ -50,9 +47,18 @@ public class Exc7 {
 	else
 		System.out.print("\nFalse - Sum not greater than 15");
 	
-	
-	
-     sc.close();
-	}
-
+	return arr;
+}
+	public static boolean numberOrNot(String input)
+    {
+        try
+        {
+            Integer.parseInt(input);
+        }
+        catch(NumberFormatException ex)
+        {
+            return false;
+        }
+        return true;
+    }
 }
